@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>krainski · Infra / Platform Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Fira+Code:wght@300;400;500;600&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="grid-bg"></div>
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
+        <div class="glow-orb glow-orb-3"></div>
+
+        <div class="floating-blocks">
+            <div class="block block-1">██<br>██</div>
+            <div class="block block-2">░░░<br>░░░<br>░░░</div>
+            <div class="block block-3">▒▒<br>▒▒</div>
+            <div class="block block-4">█<br>██<br>█</div>
+            <div class="block block-5">░░<br>░░</div>
+            <div class="block block-6">▒▒▒<br>▒▒▒</div>
+            <div class="block block-7">███<br>█</div>
+            <div class="block block-8">░<br>░░<br>░</div>
+            <div class="block block-9">▒▒</div>
+            <div class="block block-10">██<br>██<br>██</div>
+        </div>
+    </div>
+
+    <div class="noise"></div>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#top" class="logo">
+                <span class="logo-bracket">&lt;</span>krainski<span class="logo-bracket"> /&gt;</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about">about</a>
+                <a href="#skills">skills</a>
+                <a href="#projects">projects</a>
+                <a href="#certs">certs</a>
+                <a href="https://github.com/zen66ten" target="_blank">github</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="top">
+        <section class="stats">
+            <div class="stat fade-in">
+                <span class="stat-value" id="stats-stars" data-stars>--</span>
+                <span class="stat-label">GitHub Stars</span>
+            </div>
+            <div class="stat fade-in stagger-1">
+                <span class="stat-value">4</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat fade-in stagger-2">
+                <span class="stat-value">7</span>
+                <span class="stat-label">Certifications</span>
+            </div>
+            <div class="stat fade-in stagger-3">
+                <span class="stat-value">Warsaw</span>
+                <span class="stat-label">Based In</span>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- 01 · About -->
+        <section class="section" id="about">
+            <div class="section-header fade-in">
+                <span class="section-number">01</span>
+                <h2>// About</h2>
+            </div>
+            <div class="section-content">
+                <div class="content-grid">
+                    <div class="content-main fade-in-left">
+                        <p class="large-text">
+                            I like learning about distributed systems, and making sure they stay healthy.
+                        </p>
+                        <p>
+                            Four years in infrastructure and platform engineering, most of it in the CNCF ecosystem.
+                            I hold CKA, CKAD, CKS, and KCNA, plus Cisco and Juniper networking certs.
+                            When I'm not on call I build small tools, like redarmor, a TLS expiry tracker in pure Go.
+                        </p>
+                    </div>
+                    <div class="content-aside fade-in-right">
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">stack.go</span>
+                            </div>
+<pre class="code-content"><span class="fg-dim">// the daily stack</span>
+<span class="kw">package</span> main
+
+<span class="kw">var</span> stack = <span class="kw">struct</span> {
+    runtime   <span class="str">"kubernetes"</span>
+    language  <span class="str">"go"</span>
+    provision <span class="str">"terraform"</span>
+    observe   <span class="str">"prometheus + grafana"</span>
+}{
+    runtime:   <span class="str">"kubernetes"</span>,
+    language:  <span class="str">"go"</span>,
+    provision: <span class="str">"terraform"</span>,
+    observe:   <span class="str">"prometheus + grafana"</span>,
+}
+
+<span class="kw">func</span> <span class="fn">keepProductionUp</span>() {
+    <span class="kw">for</span> {
+        ship()
+        observe()
+        harden()
+    }
+}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- 02 · Skills -->
+        <section class="section" id="skills">
+            <div class="section-header fade-in">
+                <span class="section-number">02</span>
+                <h2>// Skills</h2>
+            </div>
+            <div class="section-content">
+                <div class="capabilities-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="capability scale-in stagger-1">
+                        <div class="capability-icon"><pre>┌─────┐
+│ ◉ ◉ │
+│ ═══ │
+│ ◉ ◉ │
+└─────┘</pre></div>
+                        <h3>Kubernetes</h3>
+                        <p>Cluster lifecycle, operators, and hardening. Production workloads since day one.</p>
+                    </div>
+                    <div class="capability scale-in stagger-2">
+                        <div class="capability-icon"><pre>┌─────┐
+│ >>_ │
+│ go  │
+│ ▄▄▄ │
+└─────┘</pre></div>
+                        <h3>Go</h3>
+                        <p>Services, CLIs, and small tools. redarmor is Go with zero dependencies.</p>
+                    </div>
+                    <div class="capability scale-in stagger-3">
+                        <div class="capability-icon"><pre>┌─────┐
+│ ▓▓▓ │
+│ ▓▓▓ │
+│ ▓▓▓ │
+└─────┘</pre></div>
+                        <h3>Infrastructure as Code</h3>
+                        <p>Terraform for everything that isn't a container. Planned, reviewed, applied.</p>
+                    </div>
+                    <div class="capability scale-in stagger-1">
+                        <div class="capability-icon"><pre>┌─────┐
+│ ●─● │
+│ ─┼─ │
+│ ●─● │
+└─────┘</pre></div>
+                        <h3>Networking</h3>
+                        <p>CCNA, JNCIS-ENT, and JNCIA-DC. Comfortable from the port to the routing table.</p>
+                    </div>
+                    <div class="capability scale-in stagger-2">
+                        <div class="capability-icon"><pre>┌─────┐
+│ █ █ │
+│ ▄▀▄ │
+│ █ █ │
+└─────┘</pre></div>
+                        <h3>Security</h3>
+                        <p>CKS certified. Hardening clusters and watching certificates before they expire.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- 03 · Projects -->
+        <section class="section" id="projects">
+            <div class="section-header fade-in">
+                <span class="section-number">03</span>
+                <h2>// Projects</h2>
+            </div>
+            <div class="section-content">
+
+                <!-- Redarmor -->
+                <div id="redarmor">
+                    <div class="content-main fade-in" style="max-width: 800px;">
+                        <p class="large-text">
+                            redarmor is a TLS certificate expiry tracker, written in Go with zero dependencies.
+                            It dials a list of hosts, reads the served certificate, and classifies each one before expiry becomes an outage.
+                        </p>
+                        <p style="margin-bottom: 32px;">
+                            v1 ships as a one-shot CLI on the standard library alone. The check, classify, and report
+                            steps stay separate so the logic is testable without a network. A daemon and a Kubernetes
+                            operator reuse that same core in later stages.
+                        </p>
+                    </div>
+                    <div class="code-block fade-in" style="max-width: 800px;">
+                        <div class="code-header">
+                            <span class="code-title">architecture</span>
+                        </div>
+<pre class="code-content">REDARMOR · certificate expiry tracker
+═══════════════════════════════════════════════════════════════════════════
+
+CORE PIPELINE (identical in v1, v2, v3 · v1 is stdlib only)
+───────────────────────────────────────────────────────────────────────────
+
+                      ┌─────────────────────────────────┐
+                      │            host list            │
+                      │  file · ConfigMap · CRD spec    │
+                      └────────────────┬────────────────┘
+                                       │
+                                       ▼
+                      ┌─────────────────────────────────┐
+                      │      check  (internal/check)    │
+                      │                                 │
+                      │  crypto/tls dial                │
+                      │  InsecureSkipVerify (inspect,   │
+                      │    never trust)                 │
+                      │  ServerName = SNI               │
+                      │  bounded worker pool            │
+                      │  per-host ctx timeout           │
+                      └────────────────┬────────────────┘
+                                       │
+                                       ▼
+                      ┌─────────────────────────────────┐
+                      │           Result set            │
+                      │                                 │
+                      │  []Result                       │
+                      │  host · NotAfter · DaysLeft     │
+                      │  issuer · serial · Err          │
+                      │  (a failed dial is a Result)    │
+                      └────────────────┬────────────────┘
+                                       │
+                                       ▼
+                      ┌─────────────────────────────────┐
+                      │    classify  (internal/classify)│
+                      │                                 │
+                      │  pure logic · injected now      │
+                      │  table-tested, no network       │
+                      │                                 │
+                      │  OK · Warning · Critical        │
+                      │  · Expired · NotYetValid        │
+                      └────────────────┬────────────────┘
+                                       │
+                                       ▼
+                      ┌─────────────────────────────────┐
+                      │      report  (internal/report)  │
+                      │                                 │
+                      │  table (tabwriter)              │
+                      │  JSON  (--output json)          │
+                      │  v2: Prometheus metrics         │
+                      │  v3: CRD status + Events        │
+                      └─────────────────────────────────┘</pre>
+                    </div>
+                    <div class="content-main fade-in" style="margin-top: 32px;">
+                        <a href="https://github.com/zen66ten/redarmor" class="btn btn-ghost" target="_blank">view on github <span class="arrow">→</span></a>
+                    </div>
+                </div>
+
+                <!-- k8s-lab -->
+                <div id="k8s-lab" style="margin-top: 120px;">
+                    <div class="content-main fade-in" style="max-width: 800px;">
+                        <p class="large-text">
+                            k8s-lab is a local Kubernetes laboratory on KVM/QEMU VMs.
+                            A place to test bootstrap methods, CNIs, and networking patterns close to a real cluster, without leaving the host.
+                        </p>
+                        <p style="margin-bottom: 32px;">
+                            Each iteration swaps one piece of the stack (bootstrap tool, CNI, runtime) while the rest
+                            stays fixed, so results stay comparable. Current iteration: kubeadm, Cilium replacing
+                            kube-proxy, containerd, three VMs on libvirt.
+                        </p>
+                    </div>
+                    <div class="code-block fade-in" style="max-width: 800px;">
+                        <div class="code-header">
+                            <span class="code-title">topology</span>
+                        </div>
+<pre class="code-content">┌────────────────────────────────────────────────────────┐
+│                  libvirt NAT network                   │
+│                    192.168.122.0/24                    │
+│                                                        │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │
+│  │    k8s-cp    │  │ k8s-worker1  │  │ k8s-worker2  │  │
+│  │    4 vCPU    │  │    2 vCPU    │  │    2 vCPU    │  │
+│  │  4 GiB RAM   │  │  4 GiB RAM   │  │  4 GiB RAM   │  │
+│  │ 20 GiB disk  │  │ 20 GiB disk  │  │ 20 GiB disk  │  │
+│  │control-plane │  │    worker    │  │    worker    │  │
+│  │              │  │              │  │              │  │
+│  └──────────────┘  └──────────────┘  └──────────────┘  │
+│                                                        │
+│  Cilium CNI (kube-proxy replacement)                   │
+│  containerd runtime                                    │
+│  kubeadm bootstrapped                                  │
+└────────────────────────────────────────────────────────┘</pre>
+                    </div>
+                    <div class="content-main fade-in" style="margin-top: 32px;">
+                        <a href="https://github.com/zen66ten/k8s-lab" class="btn btn-ghost" target="_blank">view on github <span class="arrow">→</span></a>
+                    </div>
+                </div>
+
+                <!-- NIX-Z -->
+                <div id="nix-z" style="margin-top: 120px;">
+                    <div class="content-main fade-in" style="max-width: 800px;">
+                        <p class="large-text">
+                            NIX-Z is a hardware monitoring suite for Linux, in the spirit of HWiNFO64.
+                            It reads the kernel and vendor tools to inventory the whole machine and report every sensor live.
+                        </p>
+                        <p style="margin-bottom: 32px;">
+                            AI-assisted. I wanted an HWiNFO64 equivalent for Linux, so I leaned on generated code
+                            and worked through it as it grew. What started as a sensor reader is now a daemon, a TUI,
+                            a CLI client, and a Qt desktop app with alerts, logging, and Prometheus metrics.
+                        </p>
+                    </div>
+                    <div class="code-block fade-in" style="max-width: 800px;">
+                        <div class="code-header">
+                            <span class="code-title">architecture</span>
+                        </div>
+<pre class="code-content">NIX-Z · hardware monitoring suite
+═══════════════════════════════════════════════════════════════════════════
+
+                      ┌─────────────────────────────────┐
+                      │            providers            │
+                      │  hwmon · cpu · rapl · nvidia    │
+                      │  amdgpu · smart · pci · usb     │
+                      │  edid · edac · dmi              │
+                      └────────────────┬────────────────┘
+                                       │
+                                       ▼
+                      ┌─────────────────────────────────┐
+                      │          nixzd (daemon)         │
+                      │  registry · min/max/avg         │
+                      │  ring buffers · alert engine    │
+                      │  sensor logger · reports        │
+                      └────────────────┬────────────────┘
+                                       │
+                                       ▼
+                      ┌─────────────────────────────────┐
+                      │            clients              │
+                      │  nixz-gui (Qt6) · nixz (TUI)    │
+                      │  nixzctl · pkg/client (Go SDK)  │
+                      │  Prometheus /metrics · Grafana  │
+                      └─────────────────────────────────┘</pre>
+                    </div>
+                    <div class="content-main fade-in" style="margin-top: 32px;">
+                        <a href="https://github.com/zen66ten/NIX-Z" class="btn btn-ghost" target="_blank">view on github <span class="arrow">→</span></a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- 04 · Certifications -->
+        <section class="section" id="certs">
+            <div class="section-header fade-in">
+                <span class="section-number">04</span>
+                <h2>// Certifications</h2>
+            </div>
+            <div class="section-content">
+                <div class="results-table fade-in">
+                    <div class="table-row table-header">
+                        <span>Certification</span>
+                        <span>Issuer</span>
+                        <span>Focus</span>
+                    </div>
+                    <div class="table-row highlight">
+                        <span>CKA</span>
+                        <span>CNCF</span>
+                        <span>Kubernetes Administration</span>
+                    </div>
+                    <div class="table-row">
+                        <span>CKAD</span>
+                        <span>CNCF</span>
+                        <span>Application Development</span>
+                    </div>
+                    <div class="table-row">
+                        <span>CKS</span>
+                        <span>CNCF</span>
+                        <span>Cluster Security</span>
+                    </div>
+                    <div class="table-row">
+                        <span>KCNA</span>
+                        <span>CNCF</span>
+                        <span>Cloud Native Foundations</span>
+                    </div>
+                    <div class="table-row">
+                        <span>CCNA</span>
+                        <span>Cisco</span>
+                        <span>Routing &amp; Switching</span>
+                    </div>
+                    <div class="table-row">
+                        <span>JNCIS-ENT</span>
+                        <span>Juniper</span>
+                        <span>Enterprise Routing</span>
+                    </div>
+                    <div class="table-row">
+                        <span>JNCIA-DC</span>
+                        <span>Juniper</span>
+                        <span>Data Center</span>
+                    </div>
+                </div>
+                <p class="results-note fade-in">
+                    Kubernetes, cloud native, and network engineering. Full certificates on request.
+                </p>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="cta fade-in">
+            <pre class="cta-ascii">    ┌────────────────────────────────────────────┐
+    │                                            │
+    │  $ whoami                                  │
+    │  zen66ten · infra / platform · warsaw      │
+<span class="cmd-copy" id="git-copy" role="button" tabindex="0">    │  $ git clone https://github.com/           │
+    │  zen66ten/redarmor                         │</span>
+    │                                            │
+    └────────────────────────────────────────────┘</pre>
+            <h2>Get In Touch</h2>
+            <p>Open to infrastructure and platform roles.</p>
+            <button type="button" id="email-copy" class="email-copy" data-label="pe.krainski [at] gmail [dot] com" aria-label="copy email address">
+                <span class="email-text">pe.krainski [at] gmail [dot] com</span>
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+            </button>
+            <a href="https://github.com/zen66ten" class="btn btn-primary" target="_blank">
+                github <span class="arrow">→</span>
+            </a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <span class="footer-label">// Site</span>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#certs">Certifications</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-label">// Elsewhere</span>
+                    <a href="https://github.com/zen66ten" target="_blank">GitHub</a>
+                    <a href="https://github.com/zen66ten/redarmor" target="_blank">Redarmor</a>
+                    <a href="https://github.com/zen66ten/k8s-lab" target="_blank">k8s-lab</a>
+                    <a href="https://github.com/zen66ten/NIX-Z" target="_blank">NIX-Z</a>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-label">// Contact</span>
+                    <a href="https://github.com/zen66ten" target="_blank">github.com/zen66ten</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 krainski</span>
+                <span class="sep">·</span>
+                <span>Warsaw, PL</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fetch total stars across all public repos
+        async function fetchStars() {
+            try {
+                const response = await fetch('https://api.github.com/users/zen66ten/repos?per_page=100');
+                const repos = await response.json();
+                const count = repos.reduce((sum, r) => sum + (r.stargazers_count || 0), 0);
+                const format = (c) => c >= 1000 ? (c / 1000).toFixed(1).replace(/\.0$/, '') + 'K' : String(c);
+                document.querySelectorAll('[data-stars]').forEach(el => {
+                    el.textContent = format(count);
+                    el.classList.add('loaded');
+                });
+            } catch (error) {
+                document.querySelectorAll('[data-stars]').forEach(el => {
+                    el.textContent = '35';
+                });
+            }
+        }
+        fetchStars();
+
+        // Copy email (obfuscated display, real address on clipboard)
+        const emailBtn = document.getElementById('email-copy');
+        if (emailBtn) {
+            const real = 'pe.krainski@gmail.com';
+            const label = emailBtn.querySelector('.email-text');
+            const showCopied = () => {
+                label.textContent = 'copied ✓';
+                emailBtn.classList.add('copied');
+                setTimeout(() => {
+                    label.textContent = emailBtn.dataset.label;
+                    emailBtn.classList.remove('copied');
+                }, 1600);
+            };
+            const fallbackCopy = () => {
+                const ta = document.createElement('textarea');
+                ta.value = real;
+                ta.style.position = 'fixed';
+                ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+            };
+            emailBtn.addEventListener('click', () => {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(real).then(showCopied).catch(() => { fallbackCopy(); showCopied(); });
+                } else {
+                    fallbackCopy();
+                    showCopied();
+                }
+            });
+        }
+
+
+        // Copy git clone command (click the terminal command)
+        const gitCopy = document.getElementById('git-copy');
+        if (gitCopy) {
+            const cmd = 'git clone https://github.com/zen66ten/redarmor/';
+            const original = gitCopy.textContent;
+            const pad = (c) => '    │' + (c + ' '.repeat(44)).slice(0, 44) + '│';
+            const copiedBox = pad('  copied ✓') + '\n' + pad('');
+            const fallback = () => {
+                const ta = document.createElement('textarea');
+                ta.value = cmd;
+                ta.style.position = 'fixed';
+                ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+            };
+            gitCopy.addEventListener('click', () => {
+                const done = () => {
+                    gitCopy.textContent = copiedBox;
+                    gitCopy.classList.add('copied');
+                    setTimeout(() => {
+                        gitCopy.textContent = original;
+                        gitCopy.classList.remove('copied');
+                    }, 1600);
+                };
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(cmd).then(done).catch(() => { fallback(); done(); });
+                } else {
+                    fallback();
+                    done();
+                }
+            });
+        }
+
+        // Scroll-triggered animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax on scroll
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrollY = window.scrollY;
+                    document.querySelectorAll('.glow-orb').forEach((orb, i) => {
+                        orb.style.transform = `translateY(${scrollY * (0.05 + i * 0.02)}px)`;
+                    });
+                    document.querySelectorAll('.block').forEach((block, i) => {
+                        block.style.transform = `translateY(${scrollY * (0.02 + i * 0.01)}px)`;
+                    });
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    </script>
+</body>
+</html>
