@@ -1124,3 +1124,29 @@ main {
 .cmd-copy.copied {
     color: var(--accent);
 }
+
+
+/* ===========================================================================
+   Project Grid (sticky explanation sidebar)
+   =========================================================================== */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 48px;
+    align-items: start;
+}
+
+.project-aside {
+    position: sticky;
+    top: 96px;
+}
+
+@media (max-width: 1024px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-aside {
+        position: static;
+    }
+}

@@ -184,18 +184,8 @@
 
                 <!-- Redarmor -->
                 <div id="redarmor">
-                    <div class="content-main fade-in" style="max-width: 800px;">
-                        <p class="large-text">
-                            redarmor is a TLS certificate expiry tracker, written in Go with zero dependencies.
-                            It dials a list of hosts, reads the served certificate, and classifies each one before expiry becomes an outage.
-                        </p>
-                        <p style="margin-bottom: 32px;">
-                            v1 ships as a one-shot CLI on the standard library alone. The check, classify, and report
-                            steps stay separate so the logic is testable without a network. A daemon and a Kubernetes
-                            operator reuse that same core in later stages.
-                        </p>
-                    </div>
-                    <div class="code-block fade-in" style="max-width: 800px;">
+                    <div class="project-grid">
+                        <div class="code-block fade-in">
                         <div class="code-header">
                             <span class="code-title">architecture</span>
                         </div>
@@ -253,25 +243,28 @@ CORE PIPELINE (identical in v1, v2, v3 · v1 is stdlib only)
                       │  v3: CRD status + Events        │
                       └─────────────────────────────────┘</pre>
                     </div>
-                    <div class="content-main fade-in" style="margin-top: 32px;">
+                        <aside class="project-aside">
+                            <div class="content-main fade-in">
+                        <p class="large-text">
+                            redarmor is a TLS certificate expiry tracker, written in Go with zero dependencies.
+                            It dials a list of hosts, reads the served certificate, and classifies each one before expiry becomes an outage.
+                        </p>
+                        <p style="margin-bottom: 32px;">
+                            v1 ships as a one-shot CLI on the standard library alone. The check, classify, and report
+                            steps stay separate so the logic is testable without a network. A daemon and a Kubernetes
+                            operator reuse that same core in later stages.
+                        </p>
+                    
                         <a href="https://github.com/zen66ten/redarmor" class="btn btn-ghost" target="_blank">view on github <span class="arrow">→</span></a>
+                    </div>
+                        </aside>
                     </div>
                 </div>
 
                 <!-- k8s-lab -->
                 <div id="k8s-lab" style="margin-top: 120px;">
-                    <div class="content-main fade-in" style="max-width: 800px;">
-                        <p class="large-text">
-                            k8s-lab is a local Kubernetes laboratory on KVM/QEMU VMs.
-                            A place to test bootstrap methods, CNIs, and networking patterns close to a real cluster, without leaving the host.
-                        </p>
-                        <p style="margin-bottom: 32px;">
-                            Each iteration swaps one piece of the stack (bootstrap tool, CNI, runtime) while the rest
-                            stays fixed, so results stay comparable. Current iteration: kubeadm, Cilium replacing
-                            kube-proxy, containerd, three VMs on libvirt.
-                        </p>
-                    </div>
-                    <div class="code-block fade-in" style="max-width: 800px;">
+                    <div class="project-grid">
+                        <div class="code-block fade-in">
                         <div class="code-header">
                             <span class="code-title">topology</span>
                         </div>
@@ -293,25 +286,28 @@ CORE PIPELINE (identical in v1, v2, v3 · v1 is stdlib only)
 │  kubeadm bootstrapped                                  │
 └────────────────────────────────────────────────────────┘</pre>
                     </div>
-                    <div class="content-main fade-in" style="margin-top: 32px;">
+                        <aside class="project-aside">
+                            <div class="content-main fade-in">
+                        <p class="large-text">
+                            k8s-lab is a local Kubernetes laboratory on KVM/QEMU VMs.
+                            A place to test bootstrap methods, CNIs, and networking patterns close to a real cluster, without leaving the host.
+                        </p>
+                        <p style="margin-bottom: 32px;">
+                            Each iteration swaps one piece of the stack (bootstrap tool, CNI, runtime) while the rest
+                            stays fixed, so results stay comparable. Current iteration: kubeadm, Cilium replacing
+                            kube-proxy, containerd, three VMs on libvirt.
+                        </p>
+                    
                         <a href="https://github.com/zen66ten/k8s-lab" class="btn btn-ghost" target="_blank">view on github <span class="arrow">→</span></a>
+                    </div>
+                        </aside>
                     </div>
                 </div>
 
                 <!-- NIX-Z -->
                 <div id="nix-z" style="margin-top: 120px;">
-                    <div class="content-main fade-in" style="max-width: 800px;">
-                        <p class="large-text">
-                            NIX-Z is a hardware monitoring suite for Linux, in the spirit of HWiNFO64.
-                            It reads the kernel and vendor tools to inventory the whole machine and report every sensor live.
-                        </p>
-                        <p style="margin-bottom: 32px;">
-                            AI-assisted. I wanted an HWiNFO64 equivalent for Linux, so I leaned on generated code
-                            and worked through it as it grew. What started as a sensor reader is now a daemon, a TUI,
-                            a CLI client, and a Qt desktop app with alerts, logging, and Prometheus metrics.
-                        </p>
-                    </div>
-                    <div class="code-block fade-in" style="max-width: 800px;">
+                    <div class="project-grid">
+                        <div class="code-block fade-in">
                         <div class="code-header">
                             <span class="code-title">architecture</span>
                         </div>
@@ -341,8 +337,21 @@ CORE PIPELINE (identical in v1, v2, v3 · v1 is stdlib only)
                       │  Prometheus /metrics · Grafana  │
                       └─────────────────────────────────┘</pre>
                     </div>
-                    <div class="content-main fade-in" style="margin-top: 32px;">
+                        <aside class="project-aside">
+                            <div class="content-main fade-in">
+                        <p class="large-text">
+                            NIX-Z is a hardware monitoring suite for Linux, in the spirit of HWiNFO64.
+                            It reads the kernel and vendor tools to inventory the whole machine and report every sensor live.
+                        </p>
+                        <p style="margin-bottom: 32px;">
+                            AI-assisted. I wanted an HWiNFO64 equivalent for Linux, so I leaned on generated code
+                            and worked through it as it grew. What started as a sensor reader is now a daemon, a TUI,
+                            a CLI client, and a Qt desktop app with alerts, logging, and Prometheus metrics.
+                        </p>
+                    
                         <a href="https://github.com/zen66ten/NIX-Z" class="btn btn-ghost" target="_blank">view on github <span class="arrow">→</span></a>
+                    </div>
+                        </aside>
                     </div>
                 </div>
 
