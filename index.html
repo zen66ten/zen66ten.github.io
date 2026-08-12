@@ -97,15 +97,13 @@
 <span class="kw">package</span> main
 
 <span class="kw">var</span> stack = <span class="kw">struct</span> {
-    runtime   <span class="str">"kubernetes"</span>
-    language  <span class="str">"go"</span>
-    provision <span class="str">"terraform"</span>
-    observe   <span class="str">"prometheus + grafana"</span>
+    runtime  string
+    language string
+    observe  string
 }{
-    runtime:   <span class="str">"kubernetes"</span>,
-    language:  <span class="str">"go"</span>,
-    provision: <span class="str">"terraform"</span>,
-    observe:   <span class="str">"prometheus + grafana"</span>,
+    runtime:  <span class="str">"kubernetes"</span>,
+    language: <span class="str">"go"</span>,
+    observe:  <span class="str">"prometheus + grafana + langfuse"</span>,
 }
 
 <span class="kw">func</span> <span class="fn">keepProductionUp</span>() {
@@ -151,12 +149,12 @@
                     </div>
                     <div class="capability scale-in stagger-3">
                         <div class="capability-icon"><pre>┌─────┐
-│ ▓▓▓ │
-│ ▓▓▓ │
-│ ▓▓▓ │
+│ ▁▃▅ │
+│ ▃▅▇ │
+│ ▅▇█ │
 └─────┘</pre></div>
-                        <h3>Infrastructure as Code</h3>
-                        <p>Terraform for everything that isn't a container. Planned, reviewed, applied.</p>
+                        <h3>Observability</h3>
+                        <p>Prometheus, Grafana, and Langfuse. Metrics and traces with the dashboards to read them.</p>
                     </div>
                     <div class="capability scale-in stagger-1">
                         <div class="capability-icon"><pre>┌─────┐
