@@ -714,6 +714,7 @@ main {
     padding: 24px;
     color: var(--fg-muted);
     overflow-x: auto;
+    tab-size: 4;
 }
 
 .kw { color: #c084fc; }
