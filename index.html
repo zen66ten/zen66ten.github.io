@@ -304,53 +304,57 @@ CORE PIPELINE (identical in v1, v2, v3 · v1 is stdlib only)
                     </div>
                 </div>
 
-                <!-- NIX-Z -->
-                <div id="nix-z" style="margin-top: 120px;">
+                                <!-- xdspark -->
+                <div id="xdspark" style="margin-top: 120px;">
                     <div class="project-grid">
                         <div class="code-block fade-in">
-                        <div class="code-header">
-                            <span class="code-title">architecture</span>
-                        </div>
-<pre class="code-content">NIX-Z · hardware monitoring suite
+                            <div class="code-header">
+                                <span class="code-title">architecture</span>
+                            </div>
+<pre class="code-content">XDSPARK · protocol traffic sparklines
 ═══════════════════════════════════════════════════════════════════════════
 
+observability only · every packet passes through the host stack untouched
+
                       ┌─────────────────────────────────┐
-                      │            providers            │
-                      │  hwmon · cpu · rapl · nvidia    │
-                      │  amdgpu · smart · pci · usb     │
-                      │  edid · edac · dmi              │
+                      │   coral · XDP program (kernel)  │
+                      │  0x0800 → IPv4 proto @ byte 9   │
+                      │  0x86DD → IPv6 next @ byte 6    │
+                      │  stats[proto].packets += 1      │
+                      │  stats[proto].bytes += len      │
+                      │  return XDP_PASS (untouched)    │
                       └────────────────┬────────────────┘
-                                       │
-                                       ▼
+                                      │  kernel writes
+                                      ▼
                       ┌─────────────────────────────────┐
-                      │          nixzd (daemon)         │
-                      │  registry · min/max/avg         │
-                      │  ring buffers · alert engine    │
-                      │  sensor logger · reports        │
+                      │    stats · PERCPU_ARRAY (256)   │
+                      │  key: u32 protocol · 0..255     │
+                      │  value: {u64 packets, u64 bytes}│
+                      │  one private slot per cpu       │
                       └────────────────┬────────────────┘
-                                       │
-                                       ▼
+                                      │  pull · every 250ms
+                                      ▼
                       ┌─────────────────────────────────┐
-                      │            clients              │
-                      │  nixz-gui (Qt6) · nixz (TUI)    │
-                      │  nixzctl · pkg/client (Go SDK)  │
-                      │  Prometheus /metrics · Grafana  │
+                      │   teal · Go daemon (userspace)  │
+                      │  load + attach (cilium/ebpf)    │
+                      │  sum per-cpu slots              │
+                      │  ring buffer → windowed rate    │
+                      │  ANSI sparklines · live redraw  │
                       └─────────────────────────────────┘</pre>
-                    </div>
+                        </div>
                         <aside class="project-aside">
                             <div class="content-main fade-in">
-                        <p class="large-text">
-                            NIX-Z is a hardware monitoring suite for Linux, in the spirit of HWiNFO64.
-                            It reads the kernel and vendor tools to inventory the whole machine and report every sensor live.
-                        </p>
-                        <p style="margin-bottom: 32px;">
-                            AI-assisted. I wanted an HWiNFO64 equivalent for Linux, so I leaned on generated code
-                            and worked through it as it grew. What started as a sensor reader is now a daemon, a TUI,
-                            a CLI client, and a Qt desktop app with alerts, logging, and Prometheus metrics.
-                        </p>
-                    
-                        <a href="https://github.com/zen66ten/NIX-Z" class="btn btn-ghost" target="_blank">view on github <span class="arrow">→</span></a>
-                    </div>
+                                <p class="large-text">
+                                    xdspark is a work in progress. An XDP program and a Go daemon that count bytes and packets
+                                    per IP protocol on an interface, aggregate them over a sliding window, and draw live sparklines in a terminal.
+                                </p>
+                                <p style="margin-bottom: 32px;">
+                                    Observability only: every packet still passes through the host stack untouched. coral, the kernel
+                                    half, classifies by protocol byte and bumps a per-cpu counter. teal, the Go daemon, loads and
+                                    attaches it, then pulls the map every 250ms and repaints the terminal.
+                                </p>
+                                <a href="https://github.com/zen66ten/xdspark" class="btn btn-ghost" target="_blank">view on github <span class="arrow">→</span></a>
+                            </div>
                         </aside>
                     </div>
                 </div>
@@ -456,7 +460,7 @@ CORE PIPELINE (identical in v1, v2, v3 · v1 is stdlib only)
                     <a href="https://github.com/zen66ten" target="_blank">GitHub</a>
                     <a href="https://github.com/zen66ten/redarmor" target="_blank">Redarmor</a>
                     <a href="https://github.com/zen66ten/k8s-lab" target="_blank">k8s-lab</a>
-                    <a href="https://github.com/zen66ten/NIX-Z" target="_blank">NIX-Z</a>
+                    <a href="https://github.com/zen66ten/xdspark" target="_blank">xdspark</a>
                 </div>
                 <div class="footer-col">
                     <span class="footer-label">// Contact</span>
